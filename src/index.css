@@ -1,0 +1,105 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.backdrop {
+  background-color: rgba(0, 0, 0, 0.75);
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.modal {
+  z-index: 100;
+  border: 2px solid black;
+  background-color: white;
+  padding: 10px 30px;
+  border-radius: 10px;
+}
+
+.modal-actions {
+  text-align: right;
+}
+
+.modal-actions button {
+  background-color: maroon;
+  border-color: maroon;
+  color: white;
+  border-radius: 20px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.modal button:hover {
+  background-color: rgb(172, 33, 33);
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10%;
+  align-items: center;
+  width: 100%;
+  height: 5rem;
+  background-color: lightblue;
+}
+
+.navigation nav {
+  display: block;
+}
+
+.navigation ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex; /* tohle je klicove pro to aby se mi to dalo na radek*/
+}
+
+.navigation li {
+  margin-left: 1rem;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: lightseagreen;
+  text-transform: capitalize;
+}
+
+.navigation a:hover {
+  color: rgb(16, 97, 93);
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  background-color: lightseagreen;
+  color: black;
+  font: inherit;
+  font-size: 200%;
+  border-radius: 20px;
+  padding: 5px 20px;
+  border-color: lightseagreen;
+  cursor: pointer;
+}
+
+.btn:hover {
+  color: rgb(16, 97, 93);
+}
