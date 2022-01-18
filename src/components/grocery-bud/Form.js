@@ -21,7 +21,8 @@ const Form = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     if (item.length === 0) {
-      setAlert("Please enter a valid value.");
+      const alertInfo = ["Please enter a valid value.", 'notOk'];
+      setAlert(alertInfo);
       setError("Please enter a valid value.");
       return;
     }
@@ -46,7 +47,6 @@ const Form = () => {
 
   return (
     <form className={classes.form} onSubmit={submitHandler}>
-      <div className={classes.formDiv}>
         <input
           type="text"
           value={item}
@@ -55,7 +55,6 @@ const Form = () => {
         />
         <button type="submit">{isEditing ? "Edit" : "Submit"}</button>
         {/*{error && <p>{error}</p>}*/}
-      </div>
     </form>
   );
 };

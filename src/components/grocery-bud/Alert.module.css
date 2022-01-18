@@ -1,0 +1,19 @@
+.alert {
+  position: absolute;
+  top: 1.5rem;
+  font: inherit;
+  font-weight: bold;
+  font-size: 1rem;
+  display: block;
+  width: 80%; /* 25 rem - 2*2.5rem (padding) = 20 rem, coz je 80% z 25 rem, takhle to napozicuju na stred*/
+  text-align: center;
+}
+
+
+.alert.ok {
+    color:green;
+}
+
+.alert.notOk {
+    color:red;
+}

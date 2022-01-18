@@ -1,5 +1,4 @@
 import { useState, createContext } from "react";
-import { __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED } from "react/cjs/react.development";
 
 export const GroceryContext = createContext({
   items: [],
@@ -15,7 +14,7 @@ export const GroceryContext = createContext({
 
 const GroceryProvider = (props) => {
   const [items, setItems] = useState([]);
-  const [alert, setAlert] = useState("");
+  const [alert, setAlert] = useState([]);
   const [isEditing, setIsEditing] = useState(false);
   const [editingId, setEditingId] = useState(null);
 
@@ -28,13 +27,16 @@ const GroceryProvider = (props) => {
       let updatedItems = [...items];
       updatedItems[existingItemIndex] = updatedItem;
       setItems(updatedItems);
-      setAlert("Item was sucessfully edited");
+      const alertInfo = ["Item was sucessfully edited", 'ok'];
+      setAlert(alertInfo);
     } else {
       // is adding
       setItems((prevItems) => {
         return prevItems.concat(item); // kdyz dam return prevItems.push(item), tak to RETURNUJE NEW LENGTH! PROTO DAM CONCAT.
       });
-      setAlert("Item added to the list");
+      const alertInfo = ["Item added to the list",'ok'];
+      //setAlert("Item added to the list", 'ok');
+      setAlert(alertInfo);
     }
   };
 
@@ -44,7 +46,8 @@ const GroceryProvider = (props) => {
         return item.id !== id;
       });
     });
-    setAlert("Item removed from the list");
+    const alertInfo = ["Item removed from the list",'notOk'];
+    setAlert(alertInfo);
   };
 
   const toggleEditingHandler = (args) => {
@@ -54,7 +57,8 @@ const GroceryProvider = (props) => {
 
   const clearAllHandler = () => {
     setItems([]);
-    setAlert("All items were removed");
+    const alertInfo = ['All items were removed','notOk'];
+    setAlert(alertInfo);
   };
 
   const grocCtx = {
