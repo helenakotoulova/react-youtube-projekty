@@ -1,0 +1,39 @@
+.item {
+  display: flex;
+  justify-content: space-between;
+  width: 20rem;
+  align-items: center;
+  background-color: rgb(243, 236, 236);
+  margin-bottom: 5px;
+  padding: 0px 0px 0px 20px;
+  height: 2rem;
+  border-radius: 10px;
+}
+
+.removeButton {
+  font: inherit;
+  background-color: transparent;
+  border-color: transparent;
+  color: red;
+  cursor: pointer;
+  margin-right: 0px;
+}
+
+.editButton {
+  font: inherit;
+  background-color: transparent;
+  border-color: transparent;
+  color: green;
+  cursor: pointer;
+  margin-right: 0px;
+}
+
+.editButton:hover {
+  color: rgb(6, 185, 6);
+  transition: all 0.3s linear;
+}
+
+.removeButton:hover {
+  color: rgb(209, 27, 27);
+  transition: all 0.3s linear;
+}

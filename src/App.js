@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { Fragment } from "react";
+import Together from "./TogetherFoodMenu";
+import Jobs from "./components/jobs/Jobs";
+import LoremIpsum from "./components/lorem-ipsum/LoremIpsum";
+import ColorGenerator from "./components/color-generator/ColorGenerator";
+import GroceryProvider from "./components/grocery-bud/context/grocery-context";
+import AppStripe from "./components/stripe-menu/AppStripe";
+import { AppProvider } from "./components/stripe-menu/context";
+import CardGrocery from "./components/grocery-bud/CardGrocery";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      {/*<AppProvider>*/}
+        <GroceryProvider>
+        {/*<Together />*/}
+        {/*<Jobs />*/}
+        {/*<LoremIpsum />*/}
+        {/*<ColorGenerator />*/}
+        <CardGrocery />
+        {/*<AppStripe />*/}
+        </GroceryProvider>
+      {/*</AppProvider>*/}
+    </Fragment>
   );
 }
 
